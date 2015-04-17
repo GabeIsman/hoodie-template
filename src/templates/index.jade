@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  .container
+    .jumbotron
+      h1 Template
+      p
+        | Paragraph
+      .hoodie-accountbar
+        .hoodie-account-signedout
+          span.btn-group
+            button.btn.btn-small.btn-primary(data-hoodie-action='signup') Sign Up
+            button.btn.btn-small.dropdown-toggle.btn-primary(data-toggle='dropdown')
+              span.caret
+            ul.dropdown-menu.pull-right
+              li
+                a(href='#', data-hoodie-action='signin') Sign In
+              li
+                a(href='#', data-hoodie-action='resetpassword') Reset Password
+              li
+                a(href='#', data-hoodie-action='destroy') Clear local data
+        // /.hoodie-account-signedout
+        .hoodie-account-signedin
+          | Hello,
+          span.hoodie-username
+            // usern name will be filled in here
+          span.btn-group
+            button.btn.btn-small.btn-primary(data-hoodie-action='signout') Sign Out
+            button.btn.btn-small.dropdown-toggle.btn-primary(data-toggle='dropdown')
+              span.caret
+            ul.dropdown-menu.pull-right
+              li
+                a(href='#', data-hoodie-action='changepassword') Change Password
+              li
+                a(href='#', data-hoodie-action='changeusername') Change Username
+              li
+                a(href='#', data-hoodie-action='destroy') Destroy Account
+        // /.hoodie-account-signedin
+        .hoodie-account-error
+          | Hello,
+          span.hoodie-username
+            // username will be filled in here
+          | .
+          span.btn-group
+            button.btn.btn-small.btn-danger(data-hoodie-action='signin') Authentication error: Sign in again
+            button.btn.btn-small.dropdown-toggle.btn-danger(data-toggle='dropdown')
+              span.caret
+            ul.dropdown-menu.pull-right
+              li
+                a(href='#', data-hoodie-action='signout') Sign out
+        // /.hoodie-account-error
+      // /hoodieAccountBar
+    footer.copy
+      p ♥ hood.ie 2015
